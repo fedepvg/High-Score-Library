@@ -1,16 +1,21 @@
 #include <iostream>
 #include "highScore.h"
-using namespace std;
+//using namespace std;
+using namespace highScore;
 
 void main()
 {
-	highScore::HighScore hS;
+	HighScore* hS = new HighScore(15);
 
-	/*hS.addScore("as", 50);
-	hS.addScore("cs", 100);
-	hS.addScore("bs", 150);*/
+	hS->addScore(15, "pepe");
+	hS->addScore(20, "pipo");
+	hS->addScore(13, "juan");
+	hS->addScore(18, "ana");
 
-	hS.getScoreList();
+	for (int i = 0; i < 4; i++)
+	{
+		cout<<hS->getScore(i).player.c_str()<<" "<< hS->getScore(i).score<<"pts";
+	}
 
 	cin.get();
 }
